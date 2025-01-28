@@ -1,7 +1,9 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
+import { store } from "../store";
 
 const Navbar = () => {
+  const { amount } = useSelector((store) => store.cart);
   return (
     <nav>
       <div className="nav-center">
@@ -9,7 +11,7 @@ const Navbar = () => {
         <div className="nav-container">
           ロゴ
           <div className="amount-container">
-            <p className="total-amount">0</p>
+            <p className="total-amount">{amount}</p>
           </div>
         </div>
       </div>
